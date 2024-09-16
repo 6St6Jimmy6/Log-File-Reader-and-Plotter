@@ -1423,5 +1423,11 @@ namespace Log_File_Reader_and_Plotter
         {
             this.Close();
         }
+
+        private void chart1_DoubleClick(object sender, EventArgs e)
+        {
+            chart1.ChartAreas["ChartArea1"].AxisX.ScaleView.ZoomReset();
+            chart1.ChartAreas["ChartArea1"].AxisY.ScaleView.ZoomReset();
+        }
     }
 }

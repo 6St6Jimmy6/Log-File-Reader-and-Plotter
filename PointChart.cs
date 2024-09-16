@@ -70,6 +70,18 @@ https://www.youtube.com/watch?v=YH5psj_dN1Q
             chartName.ChartAreas["ChartArea1"].BackImageTransparentColor = Color.Empty;
             chartName.ChartAreas["ChartArea1"].BackImageWrapMode = ChartImageWrapMode.Tile;
 
+            chartName.ChartAreas["ChartArea1"].CursorX.Interval = 0;
+            chartName.ChartAreas["ChartArea1"].CursorX.AutoScroll = true;
+            chartName.ChartAreas["ChartArea1"].CursorX.IsUserSelectionEnabled = true;
+            chartName.ChartAreas["ChartArea1"].AxisX.ScaleView.Zoomable = true;
+            chartName.ChartAreas["ChartArea1"].AxisX.ScrollBar.Enabled = true;
+
+            chartName.ChartAreas["ChartArea1"].CursorY.Interval = 0;
+            chartName.ChartAreas["ChartArea1"].CursorY.AutoScroll = true;
+            chartName.ChartAreas["ChartArea1"].CursorY.IsUserSelectionEnabled = true;
+            chartName.ChartAreas["ChartArea1"].AxisY.ScaleView.Zoomable = true;
+            chartName.ChartAreas["ChartArea1"].AxisY.ScrollBar.Enabled = true;
+
             chartName.ChartAreas["ChartArea1"].ShadowColor = Color.Black;
             chartName.ChartAreas["ChartArea1"].ShadowOffset = 0;
 
