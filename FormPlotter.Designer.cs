@@ -29,15 +29,15 @@ namespace Log_File_Reader_and_Plotter
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.Y2ComboBox = new System.Windows.Forms.ComboBox();
+            this.Y1ComboBox = new System.Windows.Forms.ComboBox();
+            this.X1ComboBox = new System.Windows.Forms.ComboBox();
             this.stopButton = new System.Windows.Forms.Button();
             this.startButton = new System.Windows.Forms.Button();
             this.closeButton = new System.Windows.Forms.Button();
@@ -50,6 +50,8 @@ namespace Log_File_Reader_and_Plotter
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.DelimiterTextBox = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,36 +88,36 @@ namespace Log_File_Reader_and_Plotter
             this.label1.TabIndex = 245;
             this.label1.Text = "X Axis";
             // 
-            // comboBox3
+            // Y2ComboBox
             // 
-            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(12, 302);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(148, 21);
-            this.comboBox3.TabIndex = 244;
-            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
+            this.Y2ComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Y2ComboBox.FormattingEnabled = true;
+            this.Y2ComboBox.Location = new System.Drawing.Point(12, 302);
+            this.Y2ComboBox.Name = "Y2ComboBox";
+            this.Y2ComboBox.Size = new System.Drawing.Size(148, 21);
+            this.Y2ComboBox.TabIndex = 244;
+            this.Y2ComboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
             // 
-            // comboBox2
+            // Y1ComboBox
             // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(12, 262);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(148, 21);
-            this.comboBox2.TabIndex = 243;
-            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            this.Y1ComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Y1ComboBox.FormattingEnabled = true;
+            this.Y1ComboBox.Location = new System.Drawing.Point(12, 262);
+            this.Y1ComboBox.Name = "Y1ComboBox";
+            this.Y1ComboBox.Size = new System.Drawing.Size(148, 21);
+            this.Y1ComboBox.TabIndex = 243;
+            this.Y1ComboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
-            // comboBox1
+            // X1ComboBox
             // 
-            this.comboBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(12, 222);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(148, 21);
-            this.comboBox1.TabIndex = 242;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.X1ComboBox.BackColor = System.Drawing.SystemColors.Control;
+            this.X1ComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.X1ComboBox.FormattingEnabled = true;
+            this.X1ComboBox.Location = new System.Drawing.Point(12, 222);
+            this.X1ComboBox.Name = "X1ComboBox";
+            this.X1ComboBox.Size = new System.Drawing.Size(148, 21);
+            this.X1ComboBox.TabIndex = 242;
+            this.X1ComboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // stopButton
             // 
@@ -180,19 +182,19 @@ namespace Log_File_Reader_and_Plotter
             // chart1
             // 
             this.chart1.BorderlineColor = System.Drawing.Color.Black;
-            chartArea4.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea4);
-            legend4.BackColor = System.Drawing.Color.Transparent;
-            legend4.ForeColor = System.Drawing.Color.White;
-            legend4.Name = "Legend1";
-            legend4.TitleBackColor = System.Drawing.Color.White;
-            this.chart1.Legends.Add(legend4);
+            chartArea2.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea2);
+            legend2.BackColor = System.Drawing.Color.Transparent;
+            legend2.ForeColor = System.Drawing.Color.White;
+            legend2.Name = "Legend1";
+            legend2.TitleBackColor = System.Drawing.Color.White;
+            this.chart1.Legends.Add(legend2);
             this.chart1.Location = new System.Drawing.Point(166, 12);
             this.chart1.Name = "chart1";
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.chart1.Series.Add(series4);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chart1.Series.Add(series2);
             this.chart1.Size = new System.Drawing.Size(1080, 720);
             this.chart1.TabIndex = 248;
             this.chart1.Text = "chart1";
@@ -206,7 +208,7 @@ namespace Log_File_Reader_and_Plotter
             this.plotToChart1.TabIndex = 249;
             this.plotToChart1.Text = "Plot to chart";
             this.plotToChart1.UseVisualStyleBackColor = true;
-            this.plotToChart1.Click += new System.EventHandler(this.plotToChart1_Click);
+            this.plotToChart1.Click += new System.EventHandler(this.plotToChart_Click);
             // 
             // toChartSettings
             // 
@@ -247,12 +249,32 @@ namespace Log_File_Reader_and_Plotter
             this.label5.TabIndex = 256;
             this.label5.Text = "Double click right to reset zoom";
             // 
+            // DelimiterTextBox
+            // 
+            this.DelimiterTextBox.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DelimiterTextBox.Location = new System.Drawing.Point(12, 183);
+            this.DelimiterTextBox.Name = "DelimiterTextBox";
+            this.DelimiterTextBox.Size = new System.Drawing.Size(36, 21);
+            this.DelimiterTextBox.TabIndex = 257;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(9, 167);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(47, 13);
+            this.label6.TabIndex = 258;
+            this.label6.Text = "Delimiter";
+            // 
             // FormPlotter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1258, 778);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.DelimiterTextBox);
             this.Controls.Add(this.stopButton);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -263,9 +285,9 @@ namespace Log_File_Reader_and_Plotter
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.Y2ComboBox);
+            this.Controls.Add(this.Y1ComboBox);
+            this.Controls.Add(this.X1ComboBox);
             this.Controls.Add(this.startButton);
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.loadCSVButton);
@@ -286,9 +308,9 @@ namespace Log_File_Reader_and_Plotter
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox Y2ComboBox;
+        private System.Windows.Forms.ComboBox Y1ComboBox;
+        private System.Windows.Forms.ComboBox X1ComboBox;
         private System.Windows.Forms.Button stopButton;
         private System.Windows.Forms.Button startButton;
         private System.Windows.Forms.Button closeButton;
@@ -301,6 +323,8 @@ namespace Log_File_Reader_and_Plotter
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox DelimiterTextBox;
+        private System.Windows.Forms.Label label6;
     }
 }
 

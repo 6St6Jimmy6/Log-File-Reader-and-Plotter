@@ -62,7 +62,6 @@
     <Compile Include="FormPlotter.Designer.cs">
       <DependentUpon>FormPlotter.cs</DependentUpon>
     </Compile>
-    <Compile Include="Plotter.cs" />
     <Compile Include="ChartClass.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -75,6 +75,16 @@ namespace Log_File_Reader_and_Plotter
             Y2MajorColorComboBox.DrawMode = DrawMode.OwnerDrawFixed;
             Y2MajorColorComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
 
+            AddInComboBoxes();
+
+            LoadX1Defaults();
+            LoadY1Defaults();
+            LoadY2Defaults();
+            LoadOtherDefaults();
+        }
+
+        private void AddInComboBoxes()
+        {
             // Add Font sizes in comboboxes
             for (int i = ChartSettings.FontSizeMin * ChartSettings.FontSizeDivided; i < ChartSettings.FontSizeMax * ChartSettings.FontSizeDivided + 1f / ChartSettings.FontSizeDivided; i++) // +1f/fontSizeDivided adds the last one missing.
             {
@@ -83,7 +93,6 @@ namespace Log_File_Reader_and_Plotter
                 Y2FontSizeComboBox.Items.Add(i * 1f / ChartSettings.FontSizeDivided);
 
             }
-
             // Add FontStyles in the comboboxes
             foreach (FontStyle style in Enum.GetValues(typeof(FontStyle)))
             {
@@ -91,7 +100,6 @@ namespace Log_File_Reader_and_Plotter
                 Y1FontStyleComboBox.Items.Add(style);
                 Y2FontStyleComboBox.Items.Add(style);
             }
-
             // Add Colors in the comboboxes
             KnownColor[] colors = (KnownColor[])Enum.GetValues(typeof(KnownColor));
             foreach (KnownColor knowColor in colors)
@@ -120,30 +128,29 @@ namespace Log_File_Reader_and_Plotter
                 Y1MinorDashStyleComboBox.Items.Add(style);
                 Y2MinorDashStyleComboBox.Items.Add(style);
             }
-
-            // Add Interval Fractions and Line Widths in the comboboxes
-            for (int i = 1; i<10 ; i++)
+            // Add Line Widths in the comboboxes
+            for (int i = 1; i < 10; i++)
             {
                 // X1
-                X1MajorDecimalsComboBox.Items.Add(i);
                 X1MajorLineWidthComboBox.Items.Add(i);
-                X1MinorIntervalComboBox.Items.Add(i);
                 X1MinorLineWidthComboBox.Items.Add(i);
                 // Y1
-                Y1MajorDecimalsComboBox.Items.Add(i);
                 Y1MajorLineWidthComboBox.Items.Add(i);
-                Y1MinorIntervalComboBox.Items.Add(i);
                 Y1MinorLineWidthComboBox.Items.Add(i);
                 // Y2
-                Y2MajorDecimalsComboBox.Items.Add(i);
-                //Y2MajorIntervalComboBox.Items.Add(i);
                 Y2MajorLineWidthComboBox.Items.Add(i);
-                //Y2MinorIntervalComboBox.Items.Add(i);
                 Y2MinorLineWidthComboBox.Items.Add(i);
             }
-
-
-
+            // Add Minor Interval in comboboxes
+            for (double i = 1; i < 10; i++)
+            {
+                // X1
+                X1MinorIntervalComboBox.Items.Add(i);
+                // Y1
+                Y1MinorIntervalComboBox.Items.Add(i);
+                // Y2
+                //Y2MinorIntervalComboBox.Items.Add(i);
+            }
             // Add Decimals in the comboboxes
             for (int i = 0; i < 10; i++)
             {
@@ -154,11 +161,6 @@ namespace Log_File_Reader_and_Plotter
                 // Y2
                 Y2MajorDecimalsComboBox.Items.Add(i);
             }
-
-            LoadX1Defaults();
-            LoadY1Defaults();
-            LoadY2Defaults();
-            LoadOtherDefaults();
         }
 
         public void LoadOtherDefaults()
@@ -465,7 +467,7 @@ namespace Log_File_Reader_and_Plotter
                 }
 
                 ChartSettings.X1MinorEnabled = X1MinorEnabledCheckBox.Checked;
-                ChartSettings.X1MinorIntervalFraction = (int)X1MinorIntervalComboBox.SelectedItem;
+                ChartSettings.X1MinorIntervalFraction = (double)X1MinorIntervalComboBox.SelectedItem;
                 ChartSettings.X1MinorLineWidth = (int)X1MinorLineWidthComboBox.SelectedItem;
                 ChartSettings.X1MinorColor = (Color)X1MinorColorComboBox.SelectedItem;
                 ChartSettings.X1MinorDashStyle = (ChartDashStyle)X1MinorDashStyleComboBox.SelectedItem;
@@ -578,7 +580,7 @@ namespace Log_File_Reader_and_Plotter
                 }
 
                 ChartSettings.Y1MinorEnabled = Y1MinorEnabledCheckBox.Checked;
-                ChartSettings.Y1MinorIntervalFraction = (int)Y1MinorIntervalComboBox.SelectedItem;
+                ChartSettings.Y1MinorIntervalFraction = (double)Y1MinorIntervalComboBox.SelectedItem;
                 ChartSettings.Y1MinorLineWidth = (int)Y1MinorLineWidthComboBox.SelectedItem;
                 ChartSettings.Y1MinorColor = (Color)Y1MinorColorComboBox.SelectedItem;
                 ChartSettings.Y1MinorDashStyle = (ChartDashStyle)Y1MinorDashStyleComboBox.SelectedItem;
@@ -691,7 +693,7 @@ namespace Log_File_Reader_and_Plotter
                 }
 
                 ChartSettings.Y2MinorEnabled = Y2MinorEnabledCheckBox.Checked;
-                //ChartSettings.Y2MinorIntervalFraction = (int)Y2MinorIntervalComboBox.SelectedItem;
+                //ChartSettings.Y2MinorIntervalFraction = (double)Y2MinorIntervalComboBox.SelectedItem;
                 ChartSettings.Y2MinorLineWidth = (int)Y2MinorLineWidthComboBox.SelectedItem;
                 ChartSettings.Y2MinorColor = (Color)Y2MinorColorComboBox.SelectedItem;
                 ChartSettings.Y2MinorDashStyle = (ChartDashStyle)Y2MinorDashStyleComboBox.SelectedItem;

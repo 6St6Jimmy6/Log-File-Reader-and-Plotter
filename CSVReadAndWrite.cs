@@ -20,7 +20,7 @@ https://www.youtube.com/watch?v=oZHHcfi_siY
 
         public static string fileText = "";
         public static string fileName = "";
-        public static string fileCompletePathAndName = "";
+        public static string fileCompletePathAndName { get; set; } = "";
 
         public string header001 = "";
         public string header002 = "";
@@ -103,6 +103,8 @@ https://www.youtube.com/watch?v=oZHHcfi_siY
 
         public void ClearListValues()
         {
+            fileLinesList.Clear();
+            headersList.Clear();
             dVals001.Clear();
             dVals002.Clear();
             dVals003.Clear();
@@ -137,6 +139,7 @@ https://www.youtube.com/watch?v=oZHHcfi_siY
 
         public void ReadFile(string initialDir)
         {
+            ClearListValues();
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.InitialDirectory = initialDir;
             ofd.Filter = "Text files (*txt)|*.txt|CSV files (*csv)|*.csv|All files (*.*)|*.*";
@@ -145,7 +148,6 @@ https://www.youtube.com/watch?v=oZHHcfi_siY
 
             if (result == DialogResult.OK)
             {
-                ClearListValues();
                 fileCompletePathAndName = ofd.FileName;
                 fileName = ofd.SafeFileName;
                 try
@@ -180,7 +182,7 @@ https://www.youtube.com/watch?v=oZHHcfi_siY
 
         public void GetHeaders()
         {
-            string[] fileLinesArray = headerString.Split(';');
+            string[] fileLinesArray = headerString.Split(ChartSettings.Delimiter);
             headersList = fileLinesArray.ToList();
 
             // Headers from the array
@@ -239,7 +241,7 @@ https://www.youtube.com/watch?v=oZHHcfi_siY
 
             foreach (string str in fileLinesList)
             {
-                lineSplitsStrArray = str.Split(';');// what's the limiter to use to split. Here it's ;
+                lineSplitsStrArray = str.Split(ChartSettings.Delimiter);// what's the limiter to use to split. Here it's ;
                 List<string> lineSplitStrList = lineSplitsStrArray.ToList();
 
                 for (int i = 0; i < lineSplitStrList.Count(); i++)
@@ -507,7 +509,7 @@ https://www.youtube.com/watch?v=oZHHcfi_siY
         public void CheckForHeader()
         {
             // Try parse the first line into doubles to see if a header exists
-            lineSplitsStrArray = fileLinesList[0].Split(';');
+            lineSplitsStrArray = fileLinesList[0].Split(ChartSettings.Delimiter);
 
             if (double.TryParse(lineSplitsStrArray[0], out double firsVal))
             {
@@ -524,7 +526,7 @@ https://www.youtube.com/watch?v=oZHHcfi_siY
 
         public void CheckXValFormat()
         {
-            lineSplitsStrArray = fileLinesList[0].Split(';');
+            lineSplitsStrArray = fileLinesList[0].Split(ChartSettings.Delimiter);
 
             if (double.TryParse(lineSplitsStrArray[0], out double firstVal)) // Take 0th element of each line and try parse it as double
             {

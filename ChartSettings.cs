@@ -1,4 +1,7 @@
-﻿using System.Drawing;
+﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Threading;
 using System.Windows.Forms.DataVisualization.Charting;
 
 namespace Log_File_Reader_and_Plotter
@@ -6,6 +9,30 @@ namespace Log_File_Reader_and_Plotter
     
     public static class ChartSettings
     {
+        public static char DefaultDelimiter { get; set; } = ';';
+        /// <summary>
+        /// X and Y values
+        /// </summary>
+        public static List<double> X1Values { get; set; } = new List<double>();
+        public static List<double> X2Values { get; set; } = new List<double>();
+        public static List<double> Y1Values { get; set; } = new List<double>();
+        public static List<double> Y2Values { get; set; } = new List<double>();
+
+        /// <summary>
+        /// Later stuff
+        /// </summary>
+        public static Thread update;
+        public static int sleep { get; set; } = 50;
+        public static bool updatedStartedOnce { get; set; } = false;
+        public static bool plotted { get; set; } = false;
+        // How long array is.
+        public static double[] flsTempArray { get; set; } = new double[300];
+        public static double[] fliTempArray { get; set; } = new double[300];
+        public static string LogFileSaveLocationFolder { get; set; } = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + @"\PhysicsDebugger\";
+
+        /// <summary>
+        /// Some Font size max mins
+        /// </summary>
         public static int FontSizeMin { get; } = 4;
         public static int FontSizeMax { get; } = 28;
         public static int FontSizeDivided { get; } = 4;
@@ -24,7 +51,7 @@ namespace Log_File_Reader_and_Plotter
         // Font
         public static int X1DefaultFontIndex { get; set; } = 153;
         public static string X1DefaultFontString { get;  set; } = "Microsoft Sans Serif";// Get X1DefaultFont as a string
-        public static float X1DefaultFontSize { get; set; } = 7f;
+        public static float X1DefaultFontSize { get; set; } = 8.25f;
         public static FontStyle X1DefaultFontStyle { get; set; } = FontStyle.Regular;// Regular Style
         public static Color X1DefaultFontColor { get; set; } = Color.White;
         // Logaritmic
@@ -39,7 +66,7 @@ namespace Log_File_Reader_and_Plotter
         public static double X1DefaultMax { get; set; } = 45;
         // Minor grid
         public static bool X1DefaultMinorEnabled { get; set; } = true;
-        public static int X1DefaultMinorIntervalFraction { get; set; } = 5;
+        public static double X1DefaultMinorIntervalFraction { get; set; } = 5;
         public static int X1DefaultMinorLineWidth { get; set; } = 1;
         public static Color X1DefaultMinorColor { get; set; } = Color.Indigo;
         public static ChartDashStyle X1DefaultMinorDashStyle { get; set; } = ChartDashStyle.Dot;
@@ -58,7 +85,7 @@ namespace Log_File_Reader_and_Plotter
         // Font
         public static int Y1DefaultFontIndex { get; set; } = 153;
         public static string Y1DefaultFontString { get; set; } = "Microsoft Sans Serif";// Get Y1DefaultFont as a string
-        public static float Y1DefaultFontSize { get; set; } = 7f;
+        public static float Y1DefaultFontSize { get; set; } = 8.25f;
         public static FontStyle Y1DefaultFontStyle { get; set; } = FontStyle.Regular;// Regular Style
         public static Color Y1DefaultFontColor { get; set; } = Color.Blue;
         // Logaritmic
@@ -73,7 +100,7 @@ namespace Log_File_Reader_and_Plotter
         public static double Y1DefaultMax { get; set; } = 10000;
         // Minor grid
         public static bool Y1DefaultMinorEnabled { get; set; } = true;
-        public static int Y1DefaultMinorIntervalFraction { get; set; } = 5;
+        public static double Y1DefaultMinorIntervalFraction { get; set; } = 5;
         public static int Y1DefaultMinorLineWidth { get; set; } = 1;
         public static Color Y1DefaultMinorColor { get; set; } = Color.Indigo;
         public static ChartDashStyle Y1DefaultMinorDashStyle { get; set; } = ChartDashStyle.Dot;
@@ -91,7 +118,7 @@ namespace Log_File_Reader_and_Plotter
         // Font
         public static int Y2DefaultFontIndex { get; set; } = 153;
         public static string Y2DefaultFontString { get; set; } = "Microsoft Sans Serif";// Get Y2DefaultFont as a string
-        public static float Y2DefaultFontSize { get; set; } = 7f;
+        public static float Y2DefaultFontSize { get; set; } = 8.25f;
         public static FontStyle Y2DefaultFontStyle { get; set; } = FontStyle.Regular;// Regular Style
         public static Color Y2DefaultFontColor { get; set; } = Color.Orange;
         // Logaritmic
@@ -106,7 +133,7 @@ namespace Log_File_Reader_and_Plotter
         public static double Y2DefaultMax { get; set; } = 2;
         // Minor grid
         public static bool Y2DefaultMinorEnabled { get; set; } = true;
-        public static int Y2DefaultMinorIntervalFraction { get; set; } = 5;
+        public static double Y2DefaultMinorIntervalFraction { get; set; } = 5;
         public static int Y2DefaultMinorLineWidth { get; set; } = 1;
         public static Color Y2DefaultMinorColor { get; set; } = Color.Indigo;
         public static ChartDashStyle Y2DefaultMinorDashStyle { get; set; } = ChartDashStyle.Dot;
@@ -114,6 +141,8 @@ namespace Log_File_Reader_and_Plotter
         ///////////////////////////////////////////////////////////////////////////////////
 
         // Changable values
+        public static char Delimiter { get; set; } = DefaultDelimiter;
+
         /// <summary>
         /// Background
         /// </summary>
@@ -140,7 +169,7 @@ namespace Log_File_Reader_and_Plotter
         public static double X1Max { get; set; } = X1DefaultMax;
         // Minor grid
         public static bool X1MinorEnabled { get; set; } = X1DefaultMinorEnabled;
-        public static int X1MinorIntervalFraction { get; set; } = X1DefaultMinorIntervalFraction;
+        public static double X1MinorIntervalFraction { get; set; } = X1DefaultMinorIntervalFraction;
         public static int X1MinorLineWidth { get; set; } = X1DefaultMinorLineWidth;
         public static Color X1MinorColor { get; set; } = X1DefaultMinorColor;
         public static ChartDashStyle X1MinorDashStyle { get; set; } = X1DefaultMinorDashStyle;
@@ -173,7 +202,7 @@ namespace Log_File_Reader_and_Plotter
         public static double Y1Max { get; set; } = Y1DefaultMax;
         // Minor grid
         public static bool Y1MinorEnabled { get; set; } = Y1DefaultMinorEnabled;
-        public static int Y1MinorIntervalFraction { get; set; } = Y1DefaultMinorIntervalFraction;
+        public static double Y1MinorIntervalFraction { get; set; } = Y1DefaultMinorIntervalFraction;
         public static int Y1MinorLineWidth { get; set; } = Y1DefaultMinorLineWidth;
         public static Color Y1MinorColor { get; set; } = Y1DefaultMinorColor;
         public static ChartDashStyle Y1MinorDashStyle { get; set; } = Y1DefaultMinorDashStyle;
@@ -208,7 +237,7 @@ namespace Log_File_Reader_and_Plotter
         public static double Y2Max { get; set; } = Y2DefaultMax;
         // Minor grid
         public static bool Y2MinorEnabled { get; set; } = Y2DefaultMinorEnabled;
-        public static int Y2MinorIntervalFraction { get; set; } = Y2DefaultMinorIntervalFraction;
+        public static double Y2MinorIntervalFraction { get; set; } = Y2DefaultMinorIntervalFraction;
         public static int Y2MinorLineWidth { get; set; } = Y2DefaultMinorLineWidth;
         public static Color Y2MinorColor { get; set; } = Y2DefaultMinorColor;
         public static ChartDashStyle Y2MinorDashStyle { get; set; } = Y2DefaultMinorDashStyle;
