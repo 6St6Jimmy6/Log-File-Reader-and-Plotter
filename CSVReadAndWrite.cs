@@ -8,6 +8,12 @@ using System.Windows.Forms;
 
 namespace Log_File_Reader_and_Plotter
 {
+/*
+Thanks for EETechStuff these awesome videos that shows how to read CSV files and make a class.
+https://www.youtube.com/watch?v=IGJv2b5fOdQ
+https://www.youtube.com/watch?v=vYxwvb1CqWA
+https://www.youtube.com/watch?v=oZHHcfi_siY
+ */
     public class CSVReadWrite
     {
         #region Fields
@@ -249,20 +255,20 @@ namespace Log_File_Reader_and_Plotter
                 // Get the number of CSV values in the lines, ignoring the first value
                 numValsPerLine = lineSplitStrList.Count - 1;
 
-                if (xValFormat == 1) // if format is double
-                {
+                //if (xValFormat == 1) // if format is double
+                //{
                     if (double.TryParse(lineSplitStrList[0], out double parsedVals001)) // Take 0th element of each line and try parse it as double
                     {
                         dVals001.Add(parsedVals001); // add it as parsedVals001
                     }
-                }
+                //}
                 /* Not needed, just an example
-                else if (xValFormat == 2) // if format if date time
-                {
-                    if (DateTime.TryParse(lineSplitStrList[0], out DateTime parsedX) )// Take 0th element of each line and try parse it as double
-                    {
-                        xValsDate.Add(parsedX);  // add it as parsedX
-                    }
+                //else if (xValFormat == 2) // if format if date time
+                //{
+                //    if (DateTime.TryParse(lineSplitStrList[0], out DateTime parsedX) )// Take 0th element of each line and try parse it as double
+                //    {
+                //        xValsDate.Add(parsedX);  // add it as parsedX
+                //    }
                 }*/
                 // We know there's at least one Y value so no need if (numValsPerLine >=1)
                 if (double.TryParse(lineSplitStrList[1], out double parsedVals002))

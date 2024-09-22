@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Log_File_Reader_and_Plotter
@@ -16,7 +13,8 @@ namespace Log_File_Reader_and_Plotter
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Plotter1());
+            //Application.Run(new FormChartSettings());
+            Application.Run(new FormPlotter());
         }
     }
 }

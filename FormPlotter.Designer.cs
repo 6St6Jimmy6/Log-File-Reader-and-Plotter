@@ -1,7 +1,7 @@
 ﻿
 namespace Log_File_Reader_and_Plotter
 {
-    partial class Plotter1
+    partial class FormPlotter
     {
         /// <summary>
         /// Required designer variable.
@@ -29,9 +29,9 @@ namespace Log_File_Reader_and_Plotter
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -46,12 +46,18 @@ namespace Log_File_Reader_and_Plotter
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.plotToChart1 = new System.Windows.Forms.Button();
+            this.toChartSettings = new System.Windows.Forms.Button();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(12, 286);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 13);
@@ -61,6 +67,8 @@ namespace Log_File_Reader_and_Plotter
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(12, 246);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(57, 13);
@@ -70,6 +78,8 @@ namespace Log_File_Reader_and_Plotter
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(12, 206);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(36, 13);
@@ -82,7 +92,7 @@ namespace Log_File_Reader_and_Plotter
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Location = new System.Drawing.Point(12, 302);
             this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 21);
+            this.comboBox3.Size = new System.Drawing.Size(148, 21);
             this.comboBox3.TabIndex = 244;
             this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
             // 
@@ -92,23 +102,24 @@ namespace Log_File_Reader_and_Plotter
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(12, 262);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
+            this.comboBox2.Size = new System.Drawing.Size(148, 21);
             this.comboBox2.TabIndex = 243;
             this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // comboBox1
             // 
+            this.comboBox1.BackColor = System.Drawing.SystemColors.Control;
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(12, 222);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.Size = new System.Drawing.Size(148, 21);
             this.comboBox1.TabIndex = 242;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // stopButton
             // 
-            this.stopButton.Location = new System.Drawing.Point(12, 358);
+            this.stopButton.Location = new System.Drawing.Point(12, 509);
             this.stopButton.Name = "stopButton";
             this.stopButton.Size = new System.Drawing.Size(75, 23);
             this.stopButton.TabIndex = 241;
@@ -118,7 +129,7 @@ namespace Log_File_Reader_and_Plotter
             // 
             // startButton
             // 
-            this.startButton.Location = new System.Drawing.Point(12, 329);
+            this.startButton.Location = new System.Drawing.Point(12, 480);
             this.startButton.Name = "startButton";
             this.startButton.Size = new System.Drawing.Size(75, 23);
             this.startButton.TabIndex = 240;
@@ -134,7 +145,7 @@ namespace Log_File_Reader_and_Plotter
             this.closeButton.TabIndex = 238;
             this.closeButton.Text = "Close";
             this.closeButton.UseVisualStyleBackColor = true;
-            this.closeButton.Click += new System.EventHandler(this.closeButton_Click_1);
+            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
             // loadCSVButton
             // 
@@ -144,7 +155,7 @@ namespace Log_File_Reader_and_Plotter
             this.loadCSVButton.TabIndex = 236;
             this.loadCSVButton.Text = "Load log file";
             this.loadCSVButton.UseVisualStyleBackColor = true;
-            this.loadCSVButton.Click += new System.EventHandler(this.loadCSVButton_Click_1);
+            this.loadCSVButton.Click += new System.EventHandler(this.loadCSVButton_Click);
             // 
             // textBox1
             // 
@@ -168,20 +179,24 @@ namespace Log_File_Reader_and_Plotter
             // 
             // chart1
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chart1.Legends.Add(legend1);
-            this.chart1.Location = new System.Drawing.Point(139, 12);
+            this.chart1.BorderlineColor = System.Drawing.Color.Black;
+            chartArea4.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea4);
+            legend4.BackColor = System.Drawing.Color.Transparent;
+            legend4.ForeColor = System.Drawing.Color.White;
+            legend4.Name = "Legend1";
+            legend4.TitleBackColor = System.Drawing.Color.White;
+            this.chart1.Legends.Add(legend4);
+            this.chart1.Location = new System.Drawing.Point(166, 12);
             this.chart1.Name = "chart1";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chart1.Series.Add(series1);
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.chart1.Series.Add(series4);
             this.chart1.Size = new System.Drawing.Size(1080, 720);
             this.chart1.TabIndex = 248;
             this.chart1.Text = "chart1";
-            this.chart1.DoubleClick += new System.EventHandler(this.chart1_DoubleClick);
+            this.chart1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.chart1_MouseDoubleClick);
             // 
             // plotToChart1
             // 
@@ -193,11 +208,56 @@ namespace Log_File_Reader_and_Plotter
             this.plotToChart1.UseVisualStyleBackColor = true;
             this.plotToChart1.Click += new System.EventHandler(this.plotToChart1_Click);
             // 
-            // Plotter1
+            // toChartSettings
+            // 
+            this.toChartSettings.Location = new System.Drawing.Point(12, 399);
+            this.toChartSettings.Name = "toChartSettings";
+            this.toChartSettings.Size = new System.Drawing.Size(75, 75);
+            this.toChartSettings.TabIndex = 253;
+            this.toChartSettings.Text = "Chart settings";
+            this.toChartSettings.UseVisualStyleBackColor = true;
+            this.toChartSettings.Click += new System.EventHandler(this.toChartSettings_Click);
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(15, 508);
+            this.textBox3.Multiline = true;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(145, 95);
+            this.textBox3.TabIndex = 254;
+            this.textBox3.Visible = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(9, 345);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(70, 13);
+            this.label4.TabIndex = 255;
+            this.label4.Text = "Drag to zoom";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(9, 366);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(155, 13);
+            this.label5.TabIndex = 256;
+            this.label5.Text = "Double click right to reset zoom";
+            // 
+            // FormPlotter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1258, 778);
+            this.Controls.Add(this.stopButton);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.toChartSettings);
             this.Controls.Add(this.plotToChart1);
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.label3);
@@ -206,14 +266,13 @@ namespace Log_File_Reader_and_Plotter
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.stopButton);
             this.Controls.Add(this.startButton);
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.loadCSVButton);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.textBox2);
-            this.Name = "Plotter1";
-            this.Text = "Form1";
+            this.Name = "FormPlotter";
+            this.Text = "Chart";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Plotter1_FormClosing);
             this.Load += new System.EventHandler(this.Plotter1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
@@ -238,6 +297,10 @@ namespace Log_File_Reader_and_Plotter
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.Button plotToChart1;
+        private System.Windows.Forms.Button toChartSettings;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
     }
 }
 
