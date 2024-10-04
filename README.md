@@ -1,3 +1,5 @@
+![alt text](https://i.imgur.com/SZbkKTP.png)
+
 I recommend putting this in "C:\Users\USER_NAME\AppData\PhysicsDebugger\" so you can easily access this with the Physics Debugger also.
 
 Currently only supports up to 30 lines. 
