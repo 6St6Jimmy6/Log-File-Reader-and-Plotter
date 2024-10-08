@@ -7,7 +7,7 @@
     <ProjectGuid>{AB055305-9AFE-42B6-902C-8BE1B5800494}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Log_File_Reader_and_Plotter</RootNamespace>
-    <AssemblyName>Log File Reader and Plotter</AssemblyName>
+    <AssemblyName>Log_File_Reader_and_Plotter</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

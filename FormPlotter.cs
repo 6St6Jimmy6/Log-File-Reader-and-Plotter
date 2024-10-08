@@ -1022,6 +1022,82 @@ namespace Log_File_Reader_and_Plotter
                     ChartSettings.X1MinorIntervalFraction = ChartSettings.X1DefaultMinorIntervalFraction;
                 }
             }
+            else if (X1ComboBox.Text == "Lateral G-Force")
+            {
+                ChartSettings.X1DefaultMax = 10;
+                ChartSettings.X1DefaultMin = -ChartSettings.X1DefaultMax;
+                ChartSettings.X1DefaultMajorInterval = 2;
+                ChartSettings.X1DefaultMajorDecimals = 2;
+                ChartSettings.X1DefaultMinorEnabled = true;
+                ChartSettings.X1DefaultMinorIntervalFraction = 2;
+
+                if (ChartSettings.X1Defaults == true)
+                {
+                    ChartSettings.X1Max = ChartSettings.X1DefaultMax;
+                    ChartSettings.X1Min = ChartSettings.X1DefaultMin;
+                    ChartSettings.X1MajorInterval = ChartSettings.X1DefaultMajorInterval;
+                    ChartSettings.X1MajorDecimals = ChartSettings.X1DefaultMajorDecimals;
+                    ChartSettings.X1MinorEnabled = ChartSettings.X1DefaultMinorEnabled;
+                    ChartSettings.X1MinorIntervalFraction = ChartSettings.X1DefaultMinorIntervalFraction;
+                }
+            }
+            else if (X1ComboBox.Text == "Longitudinal G-Force")
+            {
+                ChartSettings.X1DefaultMax = 10;
+                ChartSettings.X1DefaultMin = -ChartSettings.X1DefaultMax;
+                ChartSettings.X1DefaultMajorInterval = 2;
+                ChartSettings.X1DefaultMajorDecimals = 2;
+                ChartSettings.X1DefaultMinorEnabled = true;
+                ChartSettings.X1DefaultMinorIntervalFraction = 2;
+
+                if (ChartSettings.X1Defaults == true)
+                {
+                    ChartSettings.X1Max = ChartSettings.X1DefaultMax;
+                    ChartSettings.X1Min = ChartSettings.X1DefaultMin;
+                    ChartSettings.X1MajorInterval = ChartSettings.X1DefaultMajorInterval;
+                    ChartSettings.X1MajorDecimals = ChartSettings.X1DefaultMajorDecimals;
+                    ChartSettings.X1MinorEnabled = ChartSettings.X1DefaultMinorEnabled;
+                    ChartSettings.X1MinorIntervalFraction = ChartSettings.X1DefaultMinorIntervalFraction;
+                }
+            }
+            else if (X1ComboBox.Text == "Vertical G-Force")
+            {
+                ChartSettings.X1DefaultMax = 10;
+                ChartSettings.X1DefaultMin = -ChartSettings.X1DefaultMax;
+                ChartSettings.X1DefaultMajorInterval = 2;
+                ChartSettings.X1DefaultMajorDecimals = 2;
+                ChartSettings.X1DefaultMinorEnabled = true;
+                ChartSettings.X1DefaultMinorIntervalFraction = 2;
+
+                if (ChartSettings.X1Defaults == true)
+                {
+                    ChartSettings.X1Max = ChartSettings.X1DefaultMax;
+                    ChartSettings.X1Min = ChartSettings.X1DefaultMin;
+                    ChartSettings.X1MajorInterval = ChartSettings.X1DefaultMajorInterval;
+                    ChartSettings.X1MajorDecimals = ChartSettings.X1DefaultMajorDecimals;
+                    ChartSettings.X1MinorEnabled = ChartSettings.X1DefaultMinorEnabled;
+                    ChartSettings.X1MinorIntervalFraction = ChartSettings.X1DefaultMinorIntervalFraction;
+                }
+            }
+            else if (X1ComboBox.Text == "G-Force")
+            {
+                ChartSettings.X1DefaultMax = 10;
+                ChartSettings.X1DefaultMin = 0;
+                ChartSettings.X1DefaultMajorInterval = 1;
+                ChartSettings.X1DefaultMajorDecimals = 2;
+                ChartSettings.X1DefaultMinorEnabled = true;
+                ChartSettings.X1DefaultMinorIntervalFraction = 2;
+
+                if (ChartSettings.X1Defaults == true)
+                {
+                    ChartSettings.X1Max = ChartSettings.X1DefaultMax;
+                    ChartSettings.X1Min = ChartSettings.X1DefaultMin;
+                    ChartSettings.X1MajorInterval = ChartSettings.X1DefaultMajorInterval;
+                    ChartSettings.X1MajorDecimals = ChartSettings.X1DefaultMajorDecimals;
+                    ChartSettings.X1MinorEnabled = ChartSettings.X1DefaultMinorEnabled;
+                    ChartSettings.X1MinorIntervalFraction = ChartSettings.X1DefaultMinorIntervalFraction;
+                }
+            }
             /*
             else if (comboBox1.Text == "")
             {
@@ -1526,6 +1602,82 @@ namespace Log_File_Reader_and_Plotter
                 ChartSettings.Y1DefaultMajorDecimals = 4;
                 ChartSettings.Y1DefaultMinorEnabled = true;
                 ChartSettings.Y1DefaultMinorIntervalFraction = 5;
+
+                if (ChartSettings.Y1Defaults == true)
+                {
+                    ChartSettings.Y1Max = ChartSettings.Y1DefaultMax;
+                    ChartSettings.Y1Min = ChartSettings.Y1DefaultMin;
+                    ChartSettings.Y1MajorInterval = ChartSettings.Y1DefaultMajorInterval;
+                    ChartSettings.Y1MajorDecimals = ChartSettings.Y1DefaultMajorDecimals;
+                    ChartSettings.Y1MinorEnabled = ChartSettings.Y1DefaultMinorEnabled;
+                    ChartSettings.Y1MinorIntervalFraction = ChartSettings.Y1DefaultMinorIntervalFraction;
+                }
+            }
+            else if (Y1ComboBox.Text == "Lateral G-Force")
+            {
+                ChartSettings.Y1DefaultMax = 10;
+                ChartSettings.Y1DefaultMin = -ChartSettings.Y1DefaultMax;
+                ChartSettings.Y1DefaultMajorInterval = 2;
+                ChartSettings.Y1DefaultMajorDecimals = 2;
+                ChartSettings.Y1DefaultMinorEnabled = true;
+                ChartSettings.Y1DefaultMinorIntervalFraction = 2;
+
+                if (ChartSettings.Y1Defaults == true)
+                {
+                    ChartSettings.Y1Max = ChartSettings.Y1DefaultMax;
+                    ChartSettings.Y1Min = ChartSettings.Y1DefaultMin;
+                    ChartSettings.Y1MajorInterval = ChartSettings.Y1DefaultMajorInterval;
+                    ChartSettings.Y1MajorDecimals = ChartSettings.Y1DefaultMajorDecimals;
+                    ChartSettings.Y1MinorEnabled = ChartSettings.Y1DefaultMinorEnabled;
+                    ChartSettings.Y1MinorIntervalFraction = ChartSettings.Y1DefaultMinorIntervalFraction;
+                }
+            }
+            else if (Y1ComboBox.Text == "Longitudinal G-Force")
+            {
+                ChartSettings.Y1DefaultMax = 10;
+                ChartSettings.Y1DefaultMin = -ChartSettings.Y1DefaultMax;
+                ChartSettings.Y1DefaultMajorInterval = 2;
+                ChartSettings.Y1DefaultMajorDecimals = 2;
+                ChartSettings.Y1DefaultMinorEnabled = true;
+                ChartSettings.Y1DefaultMinorIntervalFraction = 2;
+
+                if (ChartSettings.Y1Defaults == true)
+                {
+                    ChartSettings.Y1Max = ChartSettings.Y1DefaultMax;
+                    ChartSettings.Y1Min = ChartSettings.Y1DefaultMin;
+                    ChartSettings.Y1MajorInterval = ChartSettings.Y1DefaultMajorInterval;
+                    ChartSettings.Y1MajorDecimals = ChartSettings.Y1DefaultMajorDecimals;
+                    ChartSettings.Y1MinorEnabled = ChartSettings.Y1DefaultMinorEnabled;
+                    ChartSettings.Y1MinorIntervalFraction = ChartSettings.Y1DefaultMinorIntervalFraction;
+                }
+            }
+            else if (Y1ComboBox.Text == "Vertical G-Force")
+            {
+                ChartSettings.Y1DefaultMax = 10;
+                ChartSettings.Y1DefaultMin = -ChartSettings.Y1DefaultMax;
+                ChartSettings.Y1DefaultMajorInterval = 2;
+                ChartSettings.Y1DefaultMajorDecimals = 2;
+                ChartSettings.Y1DefaultMinorEnabled = true;
+                ChartSettings.Y1DefaultMinorIntervalFraction = 2;
+
+                if (ChartSettings.Y1Defaults == true)
+                {
+                    ChartSettings.Y1Max = ChartSettings.Y1DefaultMax;
+                    ChartSettings.Y1Min = ChartSettings.Y1DefaultMin;
+                    ChartSettings.Y1MajorInterval = ChartSettings.Y1DefaultMajorInterval;
+                    ChartSettings.Y1MajorDecimals = ChartSettings.Y1DefaultMajorDecimals;
+                    ChartSettings.Y1MinorEnabled = ChartSettings.Y1DefaultMinorEnabled;
+                    ChartSettings.Y1MinorIntervalFraction = ChartSettings.Y1DefaultMinorIntervalFraction;
+                }
+            }
+            else if (Y1ComboBox.Text == "G-Force")
+            {
+                ChartSettings.Y1DefaultMax = 10;
+                ChartSettings.Y1DefaultMin = 0;
+                ChartSettings.Y1DefaultMajorInterval = 1;
+                ChartSettings.Y1DefaultMajorDecimals = 2;
+                ChartSettings.Y1DefaultMinorEnabled = true;
+                ChartSettings.Y1DefaultMinorIntervalFraction = 2;
 
                 if (ChartSettings.Y1Defaults == true)
                 {
@@ -2042,6 +2194,82 @@ namespace Log_File_Reader_and_Plotter
                 ChartSettings.Y2DefaultMajorDecimals = 4;
                 ChartSettings.Y2DefaultMinorEnabled = true;
                 ChartSettings.Y2DefaultMinorIntervalFraction = 5;
+
+                if (ChartSettings.Y2Defaults == true)
+                {
+                    ChartSettings.Y2Max = ChartSettings.Y2DefaultMax;
+                    ChartSettings.Y2Min = ChartSettings.Y2DefaultMin;
+                    ChartSettings.Y2MajorInterval = ChartSettings.Y2DefaultMajorInterval;
+                    ChartSettings.Y2MajorDecimals = ChartSettings.Y2DefaultMajorDecimals;
+                    ChartSettings.Y2MinorEnabled = ChartSettings.Y2DefaultMinorEnabled;
+                    ChartSettings.Y2MinorIntervalFraction = ChartSettings.Y2DefaultMinorIntervalFraction;
+                }
+            }
+            else if (Y2ComboBox.Text == "Lateral G-Force")
+            {
+                ChartSettings.Y2DefaultMax = 10;
+                ChartSettings.Y2DefaultMin = -ChartSettings.Y2DefaultMax;
+                ChartSettings.Y2DefaultMajorInterval = 2;
+                ChartSettings.Y2DefaultMajorDecimals = 2;
+                ChartSettings.Y2DefaultMinorEnabled = true;
+                ChartSettings.Y2DefaultMinorIntervalFraction = 2;
+
+                if (ChartSettings.Y2Defaults == true)
+                {
+                    ChartSettings.Y2Max = ChartSettings.Y2DefaultMax;
+                    ChartSettings.Y2Min = ChartSettings.Y2DefaultMin;
+                    ChartSettings.Y2MajorInterval = ChartSettings.Y2DefaultMajorInterval;
+                    ChartSettings.Y2MajorDecimals = ChartSettings.Y2DefaultMajorDecimals;
+                    ChartSettings.Y2MinorEnabled = ChartSettings.Y2DefaultMinorEnabled;
+                    ChartSettings.Y2MinorIntervalFraction = ChartSettings.Y2DefaultMinorIntervalFraction;
+                }
+            }
+            else if (Y2ComboBox.Text == "Longitudinal G-Force")
+            {
+                ChartSettings.Y2DefaultMax = 10;
+                ChartSettings.Y2DefaultMin = -ChartSettings.Y2DefaultMax;
+                ChartSettings.Y2DefaultMajorInterval = 2;
+                ChartSettings.Y2DefaultMajorDecimals = 2;
+                ChartSettings.Y2DefaultMinorEnabled = true;
+                ChartSettings.Y2DefaultMinorIntervalFraction = 2;
+
+                if (ChartSettings.Y2Defaults == true)
+                {
+                    ChartSettings.Y2Max = ChartSettings.Y2DefaultMax;
+                    ChartSettings.Y2Min = ChartSettings.Y2DefaultMin;
+                    ChartSettings.Y2MajorInterval = ChartSettings.Y2DefaultMajorInterval;
+                    ChartSettings.Y2MajorDecimals = ChartSettings.Y2DefaultMajorDecimals;
+                    ChartSettings.Y2MinorEnabled = ChartSettings.Y2DefaultMinorEnabled;
+                    ChartSettings.Y2MinorIntervalFraction = ChartSettings.Y2DefaultMinorIntervalFraction;
+                }
+            }
+            else if (Y2ComboBox.Text == "Vertical G-Force")
+            {
+                ChartSettings.Y2DefaultMax = 10;
+                ChartSettings.Y2DefaultMin = -ChartSettings.Y2DefaultMax;
+                ChartSettings.Y2DefaultMajorInterval = 2;
+                ChartSettings.Y2DefaultMajorDecimals = 2;
+                ChartSettings.Y2DefaultMinorEnabled = true;
+                ChartSettings.Y2DefaultMinorIntervalFraction = 2;
+
+                if (ChartSettings.Y2Defaults == true)
+                {
+                    ChartSettings.Y2Max = ChartSettings.Y2DefaultMax;
+                    ChartSettings.Y2Min = ChartSettings.Y2DefaultMin;
+                    ChartSettings.Y2MajorInterval = ChartSettings.Y2DefaultMajorInterval;
+                    ChartSettings.Y2MajorDecimals = ChartSettings.Y2DefaultMajorDecimals;
+                    ChartSettings.Y2MinorEnabled = ChartSettings.Y2DefaultMinorEnabled;
+                    ChartSettings.Y2MinorIntervalFraction = ChartSettings.Y2DefaultMinorIntervalFraction;
+                }
+            }
+            else if (Y2ComboBox.Text == "G-Force")
+            {
+                ChartSettings.Y2DefaultMax = 10;
+                ChartSettings.Y2DefaultMin = 0;
+                ChartSettings.Y2DefaultMajorInterval = 1;
+                ChartSettings.Y2DefaultMajorDecimals = 2;
+                ChartSettings.Y2DefaultMinorEnabled = true;
+                ChartSettings.Y2DefaultMinorIntervalFraction = 2;
 
                 if (ChartSettings.Y2Defaults == true)
                 {
