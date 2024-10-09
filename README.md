@@ -11,3 +11,6 @@ You can go in settings and customize the values when you tick off the Defaults t
 
 Drag with left mouse on the chart to zoom.
 Double click right mouse button to reset zooms or use the small icons next to the scrollbars.
+
+Special thanks to:
+- EETechStuff for his awesome tutorials and videos on a lot of stuff about general chart usage in C# and data read, write and plotting. All his videos can be found from https://www.youtube.com/@EETechStuff
